@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Xtream IPTV Privacy Policy</title><style>body{font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:0 auto;padding:16px;color:#111}h1,h2{line-height:1.2}</style></head><body><h1>Privacy Policy — Xtream IPTV</h1>
-<p>Effective date: 16 October 2026</p>
-<p>Xtream IPTV (&quot;the app&quot;) is published by Saul Redemption Services LLC (&quot;we&quot;). This policy explains what the app does with information.</p>
+<p>Effective date: 19 November 2026</p>
+<p>Xtream IPTV (&quot;the app&quot;) is published by Saul Redemption Services LLC (&quot;we&quot;). This policy explains what the app does with information. It covers the Android app and the Smart TV app for LG (webOS) and Samsung (Tizen) TVs; the section <a href="#tv">Smart TV app</a> describes where the TV app differs.</p>
 <h2>Summary</h2>
 <p>The app works without sending any personal information to us. Everything it saves stays on your device. If you choose to turn on <strong>Diagnostics</strong> (Settings &gt; Diagnostics, off by default), the app also sends anonymous crash reports and basic usage statistics, described below.</p>
 <h2>Information stored on your device</h2>
@@ -23,12 +23,32 @@
 <p>You can turn Diagnostics off at any time in Settings. Turning it off stops all collection and deletes analytics data stored on your device. To ask us to delete data already received, email us at the address below.</p>
 <h2>Network connections</h2>
 <p>The app connects to the servers you configure (your IPTV provider, playlist, guide, and the artwork and stream addresses they supply). Those servers are operated by third parties, and their handling of your data is governed by their own policies. Your device&#x27;s IP address and credentials are sent to them as required to load your content. Some providers use unencrypted HTTP; the app warns you when a source does not use HTTPS. If you turn on Diagnostics, the app also connects to Google&#x27;s Firebase services.</p>
+<h2 id="tv">Smart TV app (LG and Samsung)</h2>
+<p>The Smart TV app has no Diagnostics, crash reporting or analytics. It sends nothing to us except as part of the optional phone pairing described below.</p>
+<h3>Information stored on your TV</h3>
+<ul>
+<li><strong>Source details:</strong> the playlist links, Xtream server addresses, usernames and passwords you add. They are encrypted with the TV browser&#x27;s built-in encryption (WebCrypto) where the TV supports it; on TVs that do not, they are stored unencrypted in the app&#x27;s private storage and the app says so on the Sources screen.</li>
+<li><strong>Catalog and TV guide:</strong> lists of channels, movies and series, and programme listings, downloaded from your sources.</li>
+<li><strong>Favorites, recently watched and resume positions.</strong></li>
+</ul>
+<p>This data stays on your TV. Removing a source deletes its data; uninstalling the app deletes everything.</p>
+<h3>Adding a playlist from your phone</h3>
+<p>If you choose <strong>Add from your phone</strong>, the TV shows a QR code. Scanning it opens a web page on your phone where you enter your playlist or login. That page and the TV exchange the details through a pairing service we run on Cloudflare (Cloudflare, Inc. processes it for us as a service provider):</p>
+<ul>
+<li>The details are <strong>encrypted on your phone</strong> with a one-time key that is in the QR code and is never sent to the pairing service. Only your TV can decrypt them. The pairing service cannot read your playlist links, server addresses, usernames or passwords.</li>
+<li>The pairing service handles: your phone&#x27;s and TV&#x27;s IP addresses and the time of each request (as any web service does), a random session code, the size of the encrypted message, and whether your TV could add the playlist (a short fixed message such as &quot;Login rejected by the server&quot;).</li>
+<li>Each pairing session is deleted automatically within 10 minutes, or 1 minute after it succeeds. We do not keep logs of the contents of requests.</li>
+</ul>
+<p>Pairing is optional: you can always type the details with the remote instead.</p>
+<h3>Network connections</h3>
+<p>As with the Android app, the TV app connects directly to the servers you configure, and to the pairing service only when you use Add from your phone.</p>
 <h2>What we do not do</h2>
 <ul>
 <li>No advertising, no advertising SDKs, and no advertising ID</li>
 <li>No account or registration</li>
 <li>No sale of data, and no sharing with third parties other than Google as described above</li>
 <li>No access to contacts, location, camera, microphone, or files</li>
+<li>No Diagnostics or analytics of any kind in the Smart TV app</li>
 </ul>
 <h2>Permissions</h2>
 <p>The app requests Internet access, network state (to detect connectivity), and wake lock (to keep the screen on during playback).</p>
